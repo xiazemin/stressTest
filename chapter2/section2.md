@@ -8,8 +8,6 @@
 
 在压测开始前，你需要确保你的`open files`足够大，否则会报`TOO MANY FILES OPEN`错误，可以通过`ulimit -a`查看，如下图:
 
-![](http://img6.wtoutiao.com/?url=http://mmbiz.qpic.cn/mmbiz/GV9yQEsgTSBmbCiaiarhico0s6sh5EmVNCEj9wtJDY3oJmic5RGJEEMicVnPrScnib6ibFBFMY5o5ojt01vy1N4u7MS8Q/0?wx_fmt=png)
-
 使用`ulimit -n 10000`可以修改该值。不过这种修改并不是永久的，关闭终端会话，又会恢复回来。
 
 ### 安装
@@ -27,19 +25,17 @@ siege -c 1000 -t 5s -f  URL_File_Name
 
 上面是`siege`的两种使用方法，第一种是对指定站点进行压测，第二种是对文件中包含的若干URL进行批量测试。
 
-* `-c` 并发数
+* `-c` 并发数
 
-* `-t` 压力测试时间，可以在时间后加单位，具体查帮助，上面表示的是压测时间持续5秒
+* `-t` 压力测试时间，可以在时间后加单位，具体查帮助，上面表示的是压测时间持续5秒
 
-* `-r` 重复次数，与`-t`表达方式不同，但含义相同，设一个即可
+* `-r` 重复次数，与`-t`表达方式不同，但含义相同，设一个即可
 
-* `-f` 包含URL的文本名字
+* `-f` 包含URL的文本名字
 
-* `-b` BENCHMARK模式，请求之间无需延迟
+* `-b` BENCHMARK模式，请求之间无需延迟
 
 ### 输出结果
-
-![](http://img6.wtoutiao.com/?url=http://mmbiz.qpic.cn/mmbiz/GV9yQEsgTSBmbCiaiarhico0s6sh5EmVNCEKPiafxTSp6s8B5fS9vqIVHsh2YCtkeib9rib8avnlP4MjYT233w2ichRIA/0?wx_fmt=png)
 
 * Transactions 总测试数
 
@@ -66,6 +62,4 @@ siege -c 1000 -t 5s -f  URL_File_Name
 * Shortest transaction 传输所花最短时间
 
 最后说明下 Siege 能支持GET/POST两种请求，不过格式略有区别，并且上面罗列的只是Siege的部分参数，Siege还有很多其它参数，请一并参考手册。
-
-
 
